@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>中文考试 Chinese Test</title>
+
+  <!-- WeChat / social preview (uses SAME photo as thumbnail) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="中文考试 Chinese Test" />
+  <meta property="og:description" content="成绩图片预览" />
+  <meta property="og:image" content="https://zrtnxbnrfm-pixel.github.io/Verification-/document2/photo2.JPEG" />
+  <meta name="description" content="成绩图片预览" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      text-align: center;
+      background: #ffffff;
+      padding: 16px;
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .container { margin: 0; padding: 0; }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #fff;
+    }
+
+    .loading {
+      position: fixed;
+      inset: 0;
+      background: rgba(242, 242, 242, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .box {
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      border-radius: 14px;
+      padding: 18px 16px;
+      width: min(320px, 86vw);
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    }
+
+    .spinner {
+      width: 34px;
+      height: 34px;
+      margin: 2px auto 12px;
+      border-radius: 50%;
+      border: 3px solid #d8dbe0;
+      border-top-color: #111;
+      animation: spin 0.9s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .t1 { margin: 0; font-weight: 700; font-size: 15px; }
+    .t2 { margin: 8px 0 0; font-size: 12px; color: #666; line-height: 1.4; }
+  </style>
+</head>
+
+<body>
+  <div class="loading" id="loading">
+    <div class="box">
+      <div class="spinner"></div>
+      <p class="t1">加载中…</p>
+      <p class="t2">正在打开成绩图片<br/>请稍候</p>
+    </div>
+  </div>
+
+  <div class="header">中文考试 Chinese Test</div>
+
+  <div class="container">
+    <!-- IMPORTANT: image file inside document2 folder -->
+    <img id="resultImg" src="photo2.JPEG" alt="成绩图片" />
+  </div>
+
+  <script>
+    const loading = document.getElementById('loading');
+    const img = document.getElementById('resultImg');
+
+    function hideLoading() {
+      if (loading) loading.style.display = 'none';
+    }
+
+    img.addEventListener('load', () => setTimeout(hideLoading, 200));
+    img.addEventListener('error', () => {
+      hideLoading();
+      alert('图片加载失败：请确认文件名完全一致（photo2.JPEG 大小写必须一样），并且文件在 document2 文件夹里。');
+    });
+
+    setTimeout(hideLoading, 3500);
+  </script>
+</body>
+</html>
