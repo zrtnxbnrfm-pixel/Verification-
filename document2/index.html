@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>中文考试 Chinese Test</title>
+
+<!-- WeChat Preview -->
+<meta property="og:title" content="中文考试 Chinese Test">
+<meta property="og:description" content="汉语考试成绩在线验证结果查询">
+<meta property="og:image" content="Photo2.jpg">
+
+<style>
+
+body{
+margin:0;
+background:#ffffff;
+font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+text-align:center;
+}
+
+/* header */
+.header{
+font-size:28px;
+font-weight:600;
+padding:20px;
+border-bottom:1px solid #eee;
+}
+
+/* loading animation */
+.loader{
+margin-top:120px;
+}
+
+.spinner{
+border:5px solid #eee;
+border-top:5px solid #d60000;
+border-radius:50%;
+width:60px;
+height:60px;
+animation:spin 1s linear infinite;
+margin:auto;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* image full screen */
+.imageBox{
+display:none;
+width:100vw;
+height:100vh;
+overflow:auto;
+}
+
+.imageBox img{
+width:100%;
+height:auto;
+display:block;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+中文考试 Chinese Test
+</div>
+
+<!-- Loading -->
+<div class="loader" id="loading">
+<div class="spinner"></div>
+<p>验证中，请稍候...</p>
+</div>
+
+<!-- Image -->
+<div class="imageBox" id="image">
+<img src="Photo2.jpg" alt="成绩图片">
+</div>
+
+<script>
+setTimeout(function(){
+document.getElementById("loading").style.display="none";
+document.getElementById("image").style.display="block";
+},1800);
+</script>
+
+</body>
+</html>
