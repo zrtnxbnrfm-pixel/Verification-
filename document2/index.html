@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="中文考试 Chinese Test" />
   <meta property="og:description" content="成绩图片预览" />
-  <meta property="og:image" content="https://zrtnxbnrfm-pixel.github.io/Verification-/document2/photo2.JPEG" />
+  <meta property="og:image" content="https://zrtnxbnrfm-pixel.github.io/Verification-/document2/Photo2.jpg" />
   <meta name="description" content="成绩图片预览" />
 
   <style>
@@ -92,7 +92,7 @@
 
   <div class="container">
     <!-- IMPORTANT: image file inside document2 folder -->
-    <img id="resultImg" src="photo2.JPEG" alt="成绩图片" />
+    <img id="resultImg" <img src="Photo2.jpg"> alt="成绩图片" />
   </div>
 
   <script>
@@ -106,7 +106,7 @@
     img.addEventListener('load', () => setTimeout(hideLoading, 200));
     img.addEventListener('error', () => {
       hideLoading();
-      alert('图片加载失败：请确认文件名完全一致（photo2.JPEG 大小写必须一样），并且文件在 document2 文件夹里。');
+      alert('图片加载失败：请确认文件名完全一致（Photo2.jpg 大小写必须一样），并且文件在 document2 文件夹里。');
     });
 
     setTimeout(hideLoading, 3500);
